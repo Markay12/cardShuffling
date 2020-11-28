@@ -15,26 +15,41 @@ class BagNode
 		//default constructor
 		BagNode();
 
-		//iterator
-		int currCard;
-
 		//methods
 		vector<Cards> bag;
-		void shuffle(); //method to shuffle when 2/3 through
+		void addCard(Cards* insertion);
+		void addRandom();
+		void remove(Cards* cardRemove);
+		void display(struct BagNode*);
+		Cards insert_front(struct BagNode**, Cards newCard);
 		void empty();
 		void fill();
 
 		//getters and setters
 		int getCurrentSize();
 		bool isEmpty();
-		void addItem(Cards);
 		int getFrequencyOf(Cards);
 		Cards dealCard();
 		Cards grabCard();
 
+		Cards popRandom(Cards*);
+
 		char getCurrVal();
 		char getCurrSuit();
 
+	private:
+
+		typedef struct node
+		{
+			Cards* currentCard;
+			node* next;
+			node* previous;
+		} *nodePointer;
+
+		//pointers
+		nodePointer first;
+		nodePointer current;
+		nodePointer temp;
 };
 
 #endif
