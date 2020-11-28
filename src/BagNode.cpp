@@ -44,15 +44,58 @@ char BagNode::getCurrSuit()
 void BagNode::empty()
 {
 
+
 	//clear all elements in our bag vector
-	
+	while (first != NULL)
+	{
+
+		temp = first;
+		first = first->next;
+		free(temp);
+
+
+	}
+
+
+
 
 }
 
 void BagNode::fill()
 {
 
+
 	//same method as initialize but we create a whole new stack of cards
+	//
+	//have to start with an empty grabBag
+
+	int i = 1;
+
+	while (i <= 13)
+	{
+		int j = 1;
+		
+		while (j <= 4)
+		{
+
+
+			if (j == 1)
+			{
+				addRandom();
+			}
+			else if (j == 2)
+			{
+				addRandom();
+			}
+			else if (j == 3)
+				addRandom();
+			}
+			else if (j == 4)
+			{
+				addRandom();
+			}
+
+		
 }
 
 //return current card in deck and increment to next
@@ -78,7 +121,7 @@ void BagNode::display(struct BagNode* node)
 
 }
 
-void BagNode::addCard(Cards* targetCard)
+void BagNode::addCard(Cards* )
 {
 
 	Cards* newCard = new Cards();

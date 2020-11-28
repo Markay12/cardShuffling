@@ -11,6 +11,21 @@ using std::vector;
 class BagNode
 {
 
+	private:
+		typedef struct node
+		{
+			Cards* currentCard;
+			node* next;
+			node* previous;
+		} *nodePointer;
+
+		//pointers
+		nodePointer first;
+		nodePointer current;
+		nodePointer last;
+		nodePointer temp;
+
+
 	public:
 		//default constructor
 		BagNode();
@@ -37,19 +52,6 @@ class BagNode
 		char getCurrVal();
 		char getCurrSuit();
 
-	private:
-
-		typedef struct node
-		{
-			Cards* currentCard;
-			node* next;
-			node* previous;
-		} *nodePointer;
-
-		//pointers
-		nodePointer first;
-		nodePointer current;
-		nodePointer temp;
 };
 
 #endif
